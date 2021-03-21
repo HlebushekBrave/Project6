@@ -1,1 +1,52 @@
+def len_num(n):
+    i = 0
+    while i != 1:
+        try:
+            n = int(n)
+            n = str(n)
+            if 13 <= len(n) <= 16:
+                i = 1
+            else:
+                n = input('Введен слишком короткий или слишком длинный номер. Пожалуйста, повторите попытку: ')
+                i = 0
+        except ValueError:
+            n = input('Ошибка при вводе. Пожалуйста, повторите попытку: ')
+            i = 0
+            continue
+
+
+def type_of_card(n):
+    t = 0
+    while not t != 6:
+        if n[0] == 4:
+            t = 1
+        elif n[0] == 5:
+            t = 2
+        elif n[0:1] == 37:
+            t = 3
+        elif n[0] == 6:
+            t = 4
+        elif n[0] == 2:
+            t = 5
+        else:
+            t = 6
+
+
+def check(n):
+    l = len(n)
+    a = list(n[1:l:2])
+    r = [int(i) for i in a]
+    b = [i*2 for i in r]
+    for elem in b:
+        if elem >= 10:
+            elem1 = sum(map(int, str(elem)))
+            print(int(elem1))
+        else:
+            print(int(elem))
+
+
+n = input()
+len_num(n)
+type_of_card(n)
+check(n)
 
