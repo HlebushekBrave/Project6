@@ -1,4 +1,8 @@
 def len_num(n):
+    """
+    Checks the length of the number
+    :param n: number of the card
+    """
     i = 0
     while i != 1:
         try:
@@ -16,22 +20,30 @@ def len_num(n):
 
 
 def type_of_card(n):
-        if n[0] == '4':
-            print('Карта Visa')
-        elif n[0] == '5':
-            print('Карта MasterCard')
-        elif n[0:1] == '37':
-            print('Карта American Express')
-        elif n[0] == '6':
-            print('Карта Discover')
-        elif n[0] == '2':
-            print('Карта национальной платежной системы "Мир"')
-        else:
-            print('Карта неизвестного типа')
-            exit()
+    """
+    Checks the type of card
+    :param n: number of the card
+    """
+    if n[0] == '4':
+        print('Карта Visa')
+    elif n[0] == '5':
+        print('Карта MasterCard')
+    elif n[0:1] == '37':
+        print('Карта American Express')
+    elif n[0] == '6':
+        print('Карта Discover')
+    elif n[0] == '2':
+        print('Карта национальной платежной системы "Мир"')
+    else:
+        print('Карта неизвестного типа')
+        exit()
 
 
 def check(n):
+    """
+    Сhecks the correctness of the number
+    :param n: number of the card
+    """
     l = len(n)
     a = list(n[1:l:2])
     r = [int(i) for i in a]
@@ -53,7 +65,7 @@ def check(n):
         print('Номер карты введен неверно')
 
 
-n = str(input())
+n = str(input('Введите номер карты без пробелов: '))
 len_num(n)
 type_of_card(n)
 check(n)
